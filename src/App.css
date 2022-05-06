@@ -1,8 +1,3 @@
-.nav-btns:active{
-    border: 1px solid gray;
-    border-radius: 5px
-}
-
 .about-btns:hover, .about-btns:active{
     background-color: #FFC007;
     color: #212529;
