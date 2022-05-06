@@ -7,14 +7,14 @@ function Home() {
 
   useEffect(() => {
     (async () => {
-      const headLine = await axios.get(
-        "https://newsapi.org/v2/top-headlines?country=in&apiKey=7328f1553bdb40c4b1441ee79910af9f"
-      );
-      setHeadlines(headLine.data.articles);
-      const latestNews = await axios.get(
-        "https://newsapi.org/v2/everything?q=politics&apiKey=7328f1553bdb40c4b1441ee79910af9f"
-      );
-      setLatestNews(latestNews.data.articles);
+      // const headLine = await axios.get(
+      //   "https://newsapi.org/v2/top-headlines?country=in&apiKey=7328f1553bdb40c4b1441ee79910af9f"
+      // );
+      // setHeadlines(headLine.data.articles);
+      // const latestNews = await axios.get(
+      //   "https://newsapi.org/v2/everything?q=politics&apiKey=7328f1553bdb40c4b1441ee79910af9f"
+      // );
+      // setLatestNews(latestNews.data.articles);
     })();
   }, []);
 
@@ -24,8 +24,8 @@ function Home() {
         {/* (center content) */}
         <div className="col-md-8">
           <h5 className="h5">Today's Headlines</h5>
-          {headlines.map((news) => (
-            <div className="card mb-5">
+          {headlines.map((news, i) => (
+            <div key={i} className="card mb-5">
               <div className="card-img-top mb-3">
                 <img src={news.urlToImage} alt={news.title} />
               </div>
@@ -54,8 +54,8 @@ function Home() {
         <div className="col-md-4">
           <h5 className="h5">Latest News</h5>
 
-          {latestNews.map((news) => (
-            <div className="card mb-5">
+          {latestNews.map((news, i) => (
+            <div key={i} className="card mb-5">
               <div className="card-img-top mb-3">
                 <img src={news.urlToImage} alt={news.title} />
               </div>
