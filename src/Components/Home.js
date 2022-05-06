@@ -7,14 +7,14 @@ function Home() {
 
   useEffect(() => {
     (async () => {
-      const headLine = await axios.get(
-        "https://newsapi.org/v2/top-headlines?country=in&apiKey=7328f1553bdb40c4b1441ee79910af9f"
-      );
-      setHeadlines(headLine.data.articles);
-      const latestNews = await axios.get(
-        "https://newsapi.org/v2/everything?q=politics&apiKey=7328f1553bdb40c4b1441ee79910af9f"
-      );
-      setLatestNews(latestNews.data.articles);
+      // const headLine = await axios.get(
+      //   "https://newsapi.org/v2/top-headlines?country=in&apiKey=7328f1553bdb40c4b1441ee79910af9f"
+      // );
+      // setHeadlines(headLine.data.articles);
+      // const latestNews = await axios.get(
+      //   "https://newsapi.org/v2/everything?q=politics&apiKey=7328f1553bdb40c4b1441ee79910af9f"
+      // );
+      // setLatestNews(latestNews.data.articles);
     })();
   }, []);
 
