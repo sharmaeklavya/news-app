@@ -7,14 +7,14 @@ function Home() {
 
   useEffect(() => {
     (async () => {
-      // const headLine = await axios.get(
-      //   "https://newsapi.org/v2/top-headlines?country=in&apiKey=7328f1553bdb40c4b1441ee79910af9f"
-      // );
-      // setHeadlines(headLine.data.articles);
-      // const latestNews = await axios.get(
-      //   "https://newsapi.org/v2/everything?q=politics&apiKey=7328f1553bdb40c4b1441ee79910af9f"
-      // );
-      // setLatestNews(latestNews.data.articles);
+      const headLine = await axios.get(
+        "https://newsapi.org/v2/top-headlines?country=in&apiKey=7328f1553bdb40c4b1441ee79910af9f"
+      );
+      setHeadlines(headLine.data.articles);
+      const latestNews = await axios.get(
+        "https://newsapi.org/v2/everything?q=politics&apiKey=7328f1553bdb40c4b1441ee79910af9f"
+      );
+      setLatestNews(latestNews.data.articles);
     })();
   }, []);
 
@@ -34,7 +34,10 @@ function Home() {
                 <p className="card-text">{news.content}</p>
                 <p className="card-text">{news.description}</p>
                 <div className="d-flex justify-content-between">
-                  <p className="small p-2 border border-primary rounded">
+                  <p
+                    className="small p-2 border border-primary rounded"
+                    style={{ height: "40px", width: "180px" }}
+                  >
                     {news.author ? `By ${news.author}` : null}
                   </p>
                   <a
@@ -64,8 +67,11 @@ function Home() {
                 <p className="card-text">{news.content}</p>
                 <p className="card-text">{news.description}</p>
                 <div className="d-flex justify-content-between">
-                  <p className="small p-2 border border-primary rounded">
-                    {news.author ? `By ${news.author}` : null}
+                  <p
+                    className="small p-2 border border-primary rounded"
+                    style={{ height: "40px", width: "120px" }}
+                  >
+                    {news.author ? `By ${news.author.slice(0, 10)}` : null}
                   </p>
                   <a
                     href={news.url}
